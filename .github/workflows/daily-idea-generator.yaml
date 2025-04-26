@@ -17,8 +17,8 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install openai httpx
-      - run: python fetch_tweets.py
-      - run: python aggregate_metrics.py
+     #  - run: python fetch_tweets.py
+     #  - run: python aggregate_metrics.py
       - run: python call_openai.py
       - name: Commit ideas
         run: |
