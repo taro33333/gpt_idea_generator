@@ -9,6 +9,7 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+      TWITTER_USER_ID: ${{ secrets.TWITTER_USER_ID }}      
     steps:
       - uses: actions/checkout@v4
       - name: Setup Python
