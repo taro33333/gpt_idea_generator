@@ -1,1 +1,1 @@
-# GPT Idea Generator　engineer (Twitter → GPT)
+# GPT Idea Generator engineer (Twitter → GPT)
