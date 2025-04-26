@@ -1,10 +1,10 @@
-import os, json, datetime, openai
+import os, json, datetime
+from openai import OpenAI
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-if not openai.api_key:
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+if not client.api_key:
     raise RuntimeError("Please set OPENAI_API_KEY environment variable.")
 
-# 直接プロンプトを組み立てる
 system_prompt = """
 あなたはSNSグロースの専門家です。エンジニア向けに、次にバズりそうなツイート・スレッド・note・YouTube Shortsのネタを考えてください。
 出力はJSON配列で10件、各要素は以下形式にしてください。
@@ -22,9 +22,8 @@ user_prompt = """
 日本語で出力してください。
 """
 
-# GPT呼び出し
-resp = openai.ChatCompletion.create(
-    model="gpt-4o-mini",
+response = client.chat.completions.create(
+    model="gpt-4o",
     messages=[
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt}
@@ -33,8 +32,7 @@ resp = openai.ChatCompletion.create(
     max_tokens=1000,
 )
 
-# 結果を保存
-ideas_json = resp.choices[0].message.content
+ideas_json = response.choices[0].message.content
 ts = datetime.datetime.now().strftime("%Y-%m-%d")
 out_path = f"ideas_{ts}.json"
 
