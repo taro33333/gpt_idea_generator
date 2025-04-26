@@ -5,7 +5,7 @@ USER_ID = os.getenv("TWITTER_USER_ID")
 if not BEARER or not USER_ID:
     raise RuntimeError("Environment variables TWITTER_BEARER_TOKEN and TWITTER_USER_ID are required.")
 
-since = (datetime.datetime.utcnow() - datetime.timedelta(days=7)).isoformat("T") + "Z"
+since = (datetime.datetime.utcnow() - datetime.timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
 url = f"https://api.twitter.com/2/users/{USER_ID}/tweets"
 params = {
     "max_results": 100,
