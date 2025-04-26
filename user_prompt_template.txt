@@ -1,0 +1,6 @@
+●アカウント概要
+@tadanoneko345 / フォロワー {followers}
+●過去ツイート一覧(JSON)
+{tweets_json}
+---
+指示: データを考慮し、100%日本語で JSON だけを返答せよ。
