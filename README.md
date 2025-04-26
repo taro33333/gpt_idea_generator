@@ -1,0 +1,1 @@
+# gpt_idea_generator
