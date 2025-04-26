@@ -1,6 +1,5 @@
 # GPT Idea Generator (Twitter → GPT)
 
-自分の X (Twitter) エンゲージメントを分析し、次にバズりやすいネタを毎朝 GPT-4o で自動生成してくれるリポジトリです。
 
 ## 構成
 ```
