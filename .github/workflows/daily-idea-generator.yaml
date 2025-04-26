@@ -20,7 +20,6 @@ jobs:
      #  - run: python fetch_tweets.py
      #  - run: python aggregate_metrics.py
      #  - run: python call_openai.py
-      - run: python everyday.py
      #  - name: Commit ideas
        #  run: |
          #  git config user.name 'github-actions'
