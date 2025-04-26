@@ -15,6 +15,8 @@ params = {
 headers = {"Authorization": f"Bearer {BEARER}"}
 
 resp = httpx.get(url, params=params, headers=headers, timeout=30)
+if resp.status_code != 200:
+    print(resp.text)
 resp.raise_for_status()
 
 with open("tweets.json", "w", encoding="utf-8") as f:
